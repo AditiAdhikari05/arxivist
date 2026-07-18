@@ -1,17 +1,17 @@
 {
   "paper_id": "arxiv_2511_19942",
   "paper_title": "Differential Smoothing Mitigates Sharpening and Improves LLM Reasoning",
-  "current_stage": 5,
-  "stages_completed": [1, 2, 3, 4],
-  "stage_timestamps": { "1": "2026-07-17T00:00:00Z", "2": "2026-07-18T00:00:00Z", "3": "2026-07-18T00:00:00Z", "4": "2026-07-18T00:00:00Z", "5": null, "6": null },
-  "stage_confidence": { "1": 0.66, "2": 1.0, "3": 0.6, "4": 0.65, "5": null, "6": null },
+  "current_stage": 6,
+  "stages_completed": [1, 2, 3, 4, 5],
+  "stage_timestamps": { "1": "2026-07-17T00:00:00Z", "2": "2026-07-18T00:00:00Z", "3": "2026-07-18T00:00:00Z", "4": "2026-07-18T00:00:00Z", "5": "2026-07-18T00:00:00Z", "6": null },
+  "stage_confidence": { "1": 0.66, "2": 1.0, "3": 0.6, "4": 0.65, "5": 0.75, "6": null },
   "sir_path": "sir-registry/arxiv_2511_19942/sir.json",
   "repo_path": "paper-repos/arxiv_2511_19942/",
   "artifacts": {
     "sir": "sir-registry/arxiv_2511_19942/sir.json",
     "architecture_plan": "sir-registry/arxiv_2511_19942/architecture_plan.json",
     "repo_initialized": true,
-    "notebook_path": null,
+    "notebook_path": "paper-repos/arxiv_2511_19942/notebooks/reproduce_arxiv_2511_19942.ipynb",
     "comparison_report": null
   },
   "confidence_flags": { "training_pipeline": 0.35 },
