@@ -45,14 +45,18 @@ class DSGRPOTrainer:
 
         rewards = torch.zeros(len(batch), self.group_size)
         ref_logprobs = torch.zeros(len(batch), self.group_size)
-        old_logprobs = torch.zeros(len(batch), self.group_size)
+        old_logprobs_rows = []
 
         for i, (ex, comps) in enumerate(zip(batch, completions)):
+            row = []
             for g, comp in enumerate(comps):
                 rewards[i, g] = self.verifier.score(ex["numbers"], ex["target"], comp)
                 lp = self.policy.logprob(ex["prompt"], comp)
                 ref_logprobs[i, g] = lp.detach()
-                old_logprobs[i, g] = lp
+                row.append(lp)
+            old_logprobs_rows.append(torch.stack(row))
+
+        old_logprobs = torch.stack(old_logprobs_rows)
 
         advantages = self.advantage_fn.compute(rewards)
         is_correct = rewards > 0
