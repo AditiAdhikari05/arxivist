@@ -43,8 +43,8 @@ class DSGRPOTrainer:
             prompts, self.group_size, self.temperature, self.max_new_tokens
         )  # [B][G]
 
-        rewards = torch.zeros(len(batch), self.group_size)
-        ref_logprobs = torch.zeros(len(batch), self.group_size)
+        rewards = torch.zeros(len(batch), self.group_size, device=self.policy.device)
+        ref_logprobs = torch.zeros(len(batch), self.group_size, device=self.policy.device)
         old_logprobs_rows = []
 
         for i, (ex, comps) in enumerate(zip(batch, completions)):
