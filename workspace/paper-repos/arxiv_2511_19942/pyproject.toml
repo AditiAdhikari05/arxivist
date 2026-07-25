@@ -17,6 +17,7 @@ dependencies = [
     "datasets>=2.19",
     "pyyaml>=6.0",
     "numpy>=1.26",
+    "torchao>=0.16.0",
 ]
 
 [tool.setuptools.packages.find]
