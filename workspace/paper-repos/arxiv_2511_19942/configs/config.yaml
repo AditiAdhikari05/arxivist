@@ -5,7 +5,7 @@
 # to fit a free-tier Colab/Kaggle GPU (see architecture_plan.json risk_assessment).
 
 model:
-  base_checkpoint: "Qwen2.5-0.5B-Instruct"   # ASSUMED (scope-down): paper used Qwen2.5-3B-Instruct
+  base_checkpoint: "Qwen/Qwen2.5-0.5B-Instruct"   # ASSUMED (scope-down): paper used Qwen2.5-3B-Instruct
   use_lora: true
   lora_r: 16
   lora_alpha: 32
