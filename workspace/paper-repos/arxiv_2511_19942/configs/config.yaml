@@ -15,8 +15,8 @@ model:
 training:
   gamma_p: 0.03          # given explicitly in paper for Countdown/Qwen2.5-3B-Instruct
   gamma_n: 0.01          # given explicitly in paper for Countdown/Qwen2.5-3B-Instruct
-  group_size: 8          # ASSUMED: GRPO rollout group size G, not stated in paper
-  batch_size: 8          # ASSUMED (scope-down from paper's larger effective batch)
+  group_size: 4          # ASSUMED: GRPO rollout group size G, not stated in paper (scoped down from 8 to fit free-tier T4 GPU memory)
+  batch_size: 4          # ASSUMED (scope-down from paper's larger effective batch; further scoped down from 8 to fit free-tier T4 GPU memory)
   learning_rate: 1.0e-6  # ASSUMED: not stated in paper (SIR ambiguity, confidence 0.5)
   optimizer: adamw       # ASSUMED: not stated in paper
   num_train_steps: 300   # ASSUMED: paper trains "until reward saturates", no fixed count given
