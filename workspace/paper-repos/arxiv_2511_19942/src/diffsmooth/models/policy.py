@@ -82,8 +82,7 @@ class PolicyModel(torch.nn.Module):
         full_ids = self.tokenizer(full_text, return_tensors="pt").input_ids.to(self.device)
         assert full_ids.shape[1] >= prompt_ids.shape[1], "completion produced no new tokens"
 
-        with torch.no_grad():
-            logits = self.model(full_ids).logits  # [1, T, V]
+        logits = self.model(full_ids).logits  # [1, T, V]
         log_probs = torch.log_softmax(logits, dim=-1)
 
         completion_start = prompt_ids.shape[1]
